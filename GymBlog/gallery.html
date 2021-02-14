@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+  background-image: url('https://wallpaperaccess.com/full/3156950.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 110%;
+
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+.logo{
+    width: 50%;
+    height: 100px;
+    display: flex;
+    background: none;
+    flex-direction: row;
+    align-items:  center;
+}
+
+.logo img{
+    line-height: 100px;
+    padding-left: 8px;
+    background:transparent;
+    cursor: pointer;
+}
+
+.logo h1{
+    line-height: 100px;
+    padding-left: 20px;
+    cursor: pointer;
+}
+/* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.8; 
+  cursor: pointer; 
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container */
+.container {
+  position: relative;
+  display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+  <div class="logo">
+   <img src="Logo.png" alt="LOGO" width="70" height="60">
+   <h1 onclick="window.location.href='GymBlog.html'"  style="font-size:1.7vw;color:red">Modern Gym</h1>
+  </div>
+
+<div style="text-align:center">
+  <h2 style="color: orange">Image Gallery</h2>
+  <p style="color: red">Click on the images to expand:</p>
+</div>
+
+<!-- The four columns -->
+<div class="row">
+  <div class="column">
+    <img src="https://healthtalk.unchealthcare.org/wp-content/uploads/2020/06/GettyImages-1227598261-healthtalk-860x478.jpg" alt="sanatize" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="https://www.princehotels.com/sakuratower/wp-content/uploads/sites/17/2019/06/FitnessGym-The-Prince-Sakura-Tower-Tokyo-170502.jpg" alt="Cardio" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="https://uploads.pendry.com/redesign/wp-content/uploads/sites/2/2018/12/24114814/pendry-hotel-gym-1627x850.jpg" alt="Gym" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/19/74/d8/photo1jpg.jpg?w=900&h=-1&s=1" alt="Dumbbells" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="https://www.telegraph.co.uk/content/dam/luxury/2017/03/21/Gym_2_trans_NvBQzQNjv4BqgsaO8O78rhmZrDxTlQBjdGcv5yZLmao6LolmWYJrXns.jpg" alt="Weights" style="width:100%" onclick="myFunction(this);">
+  </div>
+   <div class="column">
+    <img src="https://www.usnews.com/dims4/USNEWS/d1755b0/2147483647/thumbnail/640x420/quality/85/?url=http%3A%2F%2Fmedia.beam.usnews.com%2F27%2Fc8e902f13aca7dca577d8ec0d20647%2Ftag%3Areuters.com%2C2020%3Anewsml_LYNXMPEG4900B%3A12020-05-10T011104Z_1_LYNXMPEG4900B_RTROPTP_3_HEALTH-CORONAVIRUS-CHINA-GYM.JPG" alt="Trainer" style="width:100%" onclick="myFunction(this);">
+  </div>
+   <div class="column">
+    <img src="https://c.files.bbci.co.uk/3250/production/_114908821_gyms201.jpg" alt="Safety" style="width:100%" onclick="myFunction(this);">
+  </div>
+   <div class="column">
+    <img src="https://c.ndtvimg.com/2020-08/n3vflup_chennai-gym_625x300_11_August_20.jpg" alt="PT" style="width:100%" onclick="myFunction(this);">
+  </div>
+</div>
+
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:100%">
+  <div id="imgtext"></div>
+</div>
+
+<script>
+function myFunction(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  var imgText = document.getElementById("imgtext");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
+}
+</script>
+
+</body>
+</html>
